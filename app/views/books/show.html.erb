@@ -1,40 +1,62 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
-  <%= @book.title %>
+  <b>Раздел:</b>
+  <%= @book.category %>
 </p>
 
 <p>
-  <b>Price:</b>
-  <%= @book.price %>
+  <b>Наименование:</b>
+  <%= link_to(@book.title, @book.link) %>
 </p>
 
 <p>
-  <b>Link:</b>
-  <%= @book.link %>
+  <b>Автор:</b>
+  <%= @book.author %>
 </p>
 
 <p>
-  <b>Desc:</b>
-  <%= @book.desc %>
+  <b></b>
+  <%= link_to( image_tag(@book.picture, class: 'image'), @book.link) %>
 </p>
 
 <p>
-  <b>Picture:</b>
-  <%= @book.picture %>
+  <b>Описание:</b>
+  <%= @book.description %>
 </p>
 
 <p>
-  <b>Vendor:</b>
+  <b>Год издания:</b>
+  <%= @book.year %>
+</p>
+
+<p>
+  <b>Производитель:</b>
   <%= @book.vendor %>
 </p>
 
 <p>
-  <b>Category:</b>
-  <%= @book.category %>
+  <b>Издатель:</b>
+  <%= @book.publisher %>
 </p>
 
+<p>
+  <b>Цена:</b>
+  <%= @book.price %>
+</p>
+<p>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7167913289158306";
+/* blueray, 728x90, создано 20.04.09 */
+google_ad_slot = "8352332507";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
 
+</p>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

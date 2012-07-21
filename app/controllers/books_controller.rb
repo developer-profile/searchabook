@@ -1,8 +1,11 @@
 class BooksController < ApplicationController
+  
+  before_filter :authorize, only: [:edit, :update, :destroy]
+  
   # GET /books
   # GET /books.json
   def index
-    @books = Book.search(params[:search])
+    @books = Book.search(params[:search]).paginate(:per_page => 3, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,6 +83,4 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
-
 end

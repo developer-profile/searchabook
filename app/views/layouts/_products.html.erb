@@ -1,0 +1,29 @@
+  <%= hidden_field_tag :direction, params[:direction] %>
+  <%= hidden_field_tag :sort, params[:sort] %>
+<table class="table table-striped">
+<% @products.each do |product| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+
+    <td>
+      <%= image_tag(product.image_url, class: 'list_image') %>
+    </td>
+
+    <td class="list_description">
+      <dl>
+        <dt><%= product.title %></dt>
+        <dd><%= truncate(strip_tags(product.description),
+               length: 80) %></dd>
+        <dd>Цена: <%= product.price %></dd>
+      </dl>
+    </td>
+
+    <td class="list_actions">
+      <%= link_to 'Просмотр', product %><br/>
+      <%= link_to 'Редактирование', edit_product_path(product) %><br/>
+      <%= link_to 'Удаление', product, 
+                  confirm: 'Вы уверены?',
+                  method: :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>

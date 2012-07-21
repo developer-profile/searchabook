@@ -1,0 +1,51 @@
+<h1>Listing books</h1>
+<%= form_tag books_path, :method => 'get', :id => "books_search" do %>
+
+  <p>
+    <%= text_field_tag :search, params[:search], :id => "keyword" %>
+    <%= submit_tag "Искать", :name => nil %>
+  </p>
+<% end %>
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Picture</th>
+    <th>Description</th>
+    <th>Year</th>
+    <th>Vendor</th>
+    <th>Publisher</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @books.each do |book| %>
+  <tr>
+    <td><%= book.category %></td>
+    <td><%= book.title %></td>
+    <td><%= book.author %></td>
+    <td><%= book.picture %></td>
+    <td><%= book.description %></td>
+    <td><%= book.year %></td>
+    <td><%= book.vendor %></td>
+    <td><%= book.publisher %></td>
+    <td><%= book.price %></td>
+    <td><%= link_to 'Show', book %></td>
+    <td><%= link_to 'Edit', edit_book_path(book) %></td>
+    <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<div class="digg_pagination">
+    <div clas="page_info">
+      <%= page_entries_info @books %>
+    </div>
+    <%= will_paginate @books, :container => false %>
+  </div>
+<br />
+
+<%= link_to 'New Book', new_book_path %>

@@ -1,0 +1,50 @@
+<header class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		
+		<div class="container-fluid">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+			<a class="brand" href="#">Поиск электронных книг</a>
+			<div class="btn-group pull-right">
+				<% if current_user %>
+				<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-user"></i> <% current_user.email %> <span class="caret"></span> </a>
+
+				<ul class="dropdown-menu">
+					<li>
+						<%= link_to "Профиль", login_path %>
+					</li>
+					<li>
+						<%= link_to "Регистрация", signup_path %>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<%= link_to "Выход", logout_path %>
+					</li>
+				</ul>
+				<% else %>
+				<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> 
+					<i class="icon-user"></i> Вход <span class="caret"></span> </a>
+
+				<ul class="dropdown-menu">
+					<li>
+						<%= link_to "Войти", login_path %>
+					</li>
+					<li class="divider"></li>
+				</ul>
+
+				<% end %>
+			</div>
+
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li>
+						<%= link_to "Главная",    root_path %>
+					</li>
+					<li>
+						<%= link_to "Электронные книги",    books_path %>
+					</li>
+
+				</ul>
+			</div><!--/.nav-collapse -->
+
+		</div>
+</header>

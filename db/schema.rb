@@ -11,18 +11,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120714103352) do
+ActiveRecord::Schema.define(:version => 20120720192616) do
 
   create_table "books", :force => true do |t|
-    t.string   "title"
-    t.integer  "price"
-    t.string   "link"
-    t.text     "desc"
-    t.string   "picture"
-    t.string   "vendor"
     t.integer  "category"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "title"
+    t.string   "author"
+    t.string   "picture"
+    t.text     "description"
+    t.integer  "year"
+    t.string   "vendor"
+    t.string   "publisher"
+    t.integer  "price"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "link"
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.integer  "categoryid"
+    t.integer  "parentcategoryid"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "theme"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

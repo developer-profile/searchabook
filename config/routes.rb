@@ -1,6 +1,18 @@
-Searchabook::Application.routes.draw do
+Searchabook::Application.routes.draw do  
+  get "sessions/new"
+
+  resources :users
+
+  resources :categories
+
   resources :books
   
+  resources :sessions
+  
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
   root :to => 'books#index'
 
   # The priority is based upon order of creation:

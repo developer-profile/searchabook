@@ -1,0 +1,70 @@
+<table class="table table-striped">
+<% @books.each do |book| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+
+    <td>
+      <%= link_to( image_tag(book.picture, class: 'list_image'), book.link) %>
+    </td>
+
+    <td class="list_description">
+      <dl>
+        <dt><%= link_to(book.title, book.link) %></dt>
+        <dd><%= truncate(strip_tags(book.description),
+               length: 300) %></dd>
+        <dd>Цена: <%= book.price %></dd>
+      </dl>
+    </td>
+
+    <td class="list_actions">
+      <%= link_to("Подробнее", book.link) %>
+      <% if current_user %>
+      <%= link_to 'Просмотр', book %><br/>
+      <%= link_to 'Редактирование', edit_book_path(book) %><br/>
+      <%= link_to 'Удаление', book, 
+                  confirm: 'Вы уверены?',
+                  method: :delete %>
+      <% end %>
+    </td>
+  </tr>
+  <tr><td> 
+  	<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7167913289158306";
+/* Список книг */
+google_ad_slot = "9893472212";
+google_ad_width = 120;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+<td> 
+  	<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7167913289158306";
+/* Список книг */
+google_ad_slot = "9893472212";
+google_ad_width = 120;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+<td> 
+  	<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7167913289158306";
+/* Список книг */
+google_ad_slot = "9893472212";
+google_ad_width = 120;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</td>
+</tr>
+<% end %>
+</table>

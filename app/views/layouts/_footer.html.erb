@@ -1,0 +1,24 @@
+<footer class="footer">
+  <small>
+    <a href="http://moloko.ws/">Software Development</a>
+    by Dmitri E. Molokov
+  </small>
+  <nav>
+    <ul>
+        
+          <li><%= link_to "Главная",    root_path %></li>
+          <li><%= link_to "Книги",    books_path %></li>
+          
+          <li><%= link_to "Помощь",    root_path %></li>
+  <% if current_user %>
+  	<li><%= link_to "Категории",    categories_path %></li>
+    <li><%= link_to "Logged in as current_user.email", root_path %></li>
+    <li><%= link_to "Log Out", logout_path %></li>
+    <li><%= link_to "Sign Up", signup_path %></li>
+  <% else %>
+    
+    <li><%= link_to "Log In", login_path %></li>
+   <% end %>
+    </ul>
+  </nav>
+</footer>

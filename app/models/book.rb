@@ -1,11 +1,15 @@
 class Book < ActiveRecord::Base
-  attr_accessible :category, :desc, :link, :picture, :price, :title, :vendor
+  attr_accessible :author, :category, :description, :picture, :price, :publisher, :title, :vendor, :year, :link
   
-    def self.search(search)
+  
+      def self.search(search)
     if search
-      where('title LIKE ?', "%#{search}%")
+      search = search.downcase
+      where('LOWER(title) LIKE ?', "%#{search}%")
     else
       scoped
     end
-  end 
+  end
+  
+  
 end
