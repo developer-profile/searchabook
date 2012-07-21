@@ -10,11 +10,22 @@
   <body>
     <%= render 'layouts/header' %>
     
-    <div class="fluid-container">
+    <div class="container-fluid">
+      <div class="row-fluid">
+      	<div class="span12">
+<%= form_tag books_path, :method => 'get', :id => "books_search", :class => "well form-search" do %>
+
+  <p>
+    <%= text_field_tag :search, params[:search], :id => "keyword", :class => "input-large search-query" %>
+    <%= submit_tag "Искать", :name => nil, :class => "btn" %>
+  </p>
+<% end %>
+</div></div>
+<div class="row-fluid">
       <%= render 'layouts/sidebar' %>
       <%= yield %>
       <%= render 'layouts/footer' %>
-    </div>    
+    </div></div> 
     
     
     

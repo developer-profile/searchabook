@@ -1,6 +1,6 @@
 namespace :db do
   desc "load user data from csv"
-  task :load_xml_data => :environment do
+  task :load_xml_file => :environment do
   
   require 'nokogiri'
   
