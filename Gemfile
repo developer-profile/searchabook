@@ -21,7 +21,7 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
   gem 'johnson'
   gem 'execjs'
-  
+  gem 'activerecord-mysql-adapter'
 end
 
 gem 'jquery-rails'
