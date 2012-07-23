@@ -3,14 +3,14 @@
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
 
     <td>
-      <%= link_to( image_tag(book.picture, class: 'list_image'), book.link) %>
+      <%= link_to( image_tag(book.picture, :class => 'list_image'), book.link) %>
     </td>
 
     <td class="list_description">
       <dl>
         <dt><%= link_to(book.title, book.link) %></dt>
         <dd><%= truncate(strip_tags(book.description),
-               length: 300) %></dd>
+               :length => 300) %></dd>
         <dd>Цена: <%= book.price %></dd>
       </dl>
     </td>
@@ -21,8 +21,8 @@
       <%= link_to 'Просмотр', book %><br/>
       <%= link_to 'Редактирование', edit_book_path(book) %><br/>
       <%= link_to 'Удаление', book, 
-                  confirm: 'Вы уверены?',
-                  method: :delete %>
+                  :confirm => 'Вы уверены?',
+                  :method => :delete %>
       <% end %>
     </td>
   </tr>
