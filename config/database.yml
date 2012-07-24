@@ -5,11 +5,14 @@
 #   gem 'sqlite3'
 development:
   adapter: mysql
+  encoding: utf8
+  reconnect: false
+  host: molokodb.moloko.ws
   database: moloko
   pool: 5
-  user: molokodb
+  username: molokodb
   password: molokodb
-  host: molokodb.moloko.ws
+  socket: /tmp/mysql.sock
 
 
 # Warning: The database defined as "test" will be erased and
@@ -23,8 +26,11 @@ test:
 
 production:
   adapter: mysql
+  encoding: utf8
+  reconnect: false
+  host: molokodb.moloko.ws
   database: moloko
   pool: 5
-  user: molokodb
+  username: molokodb
   password: molokodb
-  host: molokodb.moloko.ws
+  socket: /tmp/mysql.sock
