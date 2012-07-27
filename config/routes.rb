@@ -1,4 +1,8 @@
 Searchabook::Application.routes.draw do  
+  resources :kidandparentcategories
+
+  resources :kidandparentbooks
+
   get "sessions/new"
 
   resources :users

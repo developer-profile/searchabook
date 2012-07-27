@@ -1,0 +1,27 @@
+<h1>Listing kidandparentcategories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Categoryid</th>
+    <th>Parentcategoryid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @kidandparentcategories.each do |kidandparentcategory| %>
+  <tr>
+    <td><%= kidandparentcategory.name %></td>
+    <td><%= kidandparentcategory.categoryid %></td>
+    <td><%= kidandparentcategory.parentcategoryid %></td>
+    <td><%= link_to 'Show', kidandparentcategory %></td>
+    <td><%= link_to 'Edit', edit_kidandparentcategory_path(kidandparentcategory) %></td>
+    <td><%= link_to 'Destroy', kidandparentcategory, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Kidandparentcategory', new_kidandparentcategory_path %>

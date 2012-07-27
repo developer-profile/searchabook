@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :category %><br />
-    <%= f.collection_select :category, Category.order(:categoryid), :categoryid, :name, {}, {multiple:true, :id=>"category", :style=>"width:100%;"} %>
+    <%= f.collection_select(:category, Category.order(:categoryid), :categoryid, :name, {},{:multiple => true, :id=>"category", :style=>"width:100%;"}) %>
   </div>
   <div class="field">
     <%= f.label :title %><br />

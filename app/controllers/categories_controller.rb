@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   
-#  before_filter :authorize, :only => [:edit, :update, :destroy]
+  before_filter :authorize, :only => [:edit, :update, :destroy]
   
   # GET /categories
   # GET /categories.json

@@ -34,8 +34,10 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
     <td class="list_actions">
       <%= link_to("Подробнее", book.link, :class => "btn btn-info") %>
+
+            
       <% if current_user %>
-      <%= link_to 'Просмотр', book %><br/>
+      <%= link_to 'Просмотр', book %><br/>      
       <%= link_to 'Редактирование', edit_book_path(book) %><br/>
       <%= link_to 'Удаление', book, 
                   :confirm => 'Вы уверены?',
