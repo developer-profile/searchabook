@@ -12,7 +12,7 @@ namespace :db do
     
     linktoshop = children.css('url').inner_text
     
-    linktoshop.gsub!("prt_xml", "partner=clubjapaninfo")
+    linktoshop.gsub!("prt_xml_facet", "partner=clubjapaninfo")
     
     authorname = children.css('author') || "none"
     
@@ -78,7 +78,7 @@ namespace :db do
     
     linktoshop = children.css('url').inner_text
     
-    linktoshop.gsub!("prt_xml", "partner=clubjapaninfo")
+    linktoshop.gsub!("prt_xml_facet", "partner=clubjapaninfo")
     
     authorname = children.css('author') || "none"
     
@@ -155,7 +155,7 @@ namespace :db do
     
     linktoshop = children.css('url').inner_text
     
-    linktoshop.gsub!("prt_xml", "partner=clubjapaninfo")
+    linktoshop.gsub!("prt_xml_facet", "partner=clubjapaninfo")
     
     authorname = children.css('author') || "none"
     
@@ -232,7 +232,7 @@ namespace :db do
     
     linktoshop = children.css('url').inner_text
     
-    linktoshop.gsub!("prt_xml", "partner=clubjapaninfo")
+    linktoshop.gsub!("prt_xml_facet", "partner=clubjapaninfo")
     
     authorname = children.css('author') || "none"
     
