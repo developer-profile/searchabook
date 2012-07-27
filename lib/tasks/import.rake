@@ -171,8 +171,7 @@ namespace :db do
                 :vendor => children.css('vendor').inner_text,
                 :category => children.css('categoryid').inner_text,
                 :author => :authorname,
-                :publisher => :publishername,
-                :year => children.css('year')
+                :publisher => :publishername
                 
                 
                 )
@@ -216,3 +215,79 @@ namespace :db do
     puts "Family categories and goods loaded"
   end
 end
+
+namespace :db do
+  desc "load user data from csv"
+  task :load_xml_file_family => :environment do
+  require 'open-uri'
+  require 'nokogiri'
+  
+
+
+  @doc = Nokogiri::XML(File.open(ENV['xml_file']))
+  
+  @doc.css('offer').each do |node|
+    
+    children = node.children
+    
+    linktoshop = children.css('url').inner_text
+    
+    linktoshop.gsub!("prt_xml", "partner=clubjapaninfo")
+    
+    authorname = children.css('author') || "none"
+    
+    publishername = children.css('publisher') || "none"
+    
+    
+    Kidandparentbook.create(
+                :title => children.css('name').inner_text,
+                :price => children.css('price').inner_text,
+                :link => linktoshop,
+                :description => children.css('description').inner_text,
+                :picture => children.css('picture').inner_text,
+                :vendor => children.css('vendor').inner_text,
+                :category => children.css('categoryid').inner_text,
+                :author => :authorname,
+                :publisher => :publishername
+                
+                
+                )
+    end
+      puts "Family loaded"
+end
+end
+
+namespace :db do
+  desc "load user data from csv"
+  task :load_xml_file_family_cat => :environment do
+  require 'open-uri'
+  require 'nokogiri'
+  
+  @doc = Nokogiri::XML(File.open(ENV['xml_file']))
+
+  
+  @doc.css('category').each do |node|
+    
+   children = node.children
+   # parentidenv =  node['parentid'] 
+     
+   Kidandparentcategory.create(
+   
+               :name => node.text,
+               :categoryid => node['id'],
+               :parentcategoryid => node['parentid']
+               
+               )
+#    puts node.text
+     end
+  puts "Family categories loaded"
+  end
+end 
+
+namespace :db do
+  desc "load user data from csv"
+  task :family_xml_file => [:load_xml_file_family, :load_xml_file_family_cat]  do
+    puts "Family categories and goods loaded"
+  end
+end
+
