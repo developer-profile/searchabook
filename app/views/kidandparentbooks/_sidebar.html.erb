@@ -5,7 +5,7 @@
 			<%  @kidandparentategories = Kidandparentcategory.all %>
               <% @kidandparentategories.each do |kidandparentcategory| %>
 
-              <li><%= link_to kidandparentcategory.name, "/kidandparentategories/?utf8=✓&search=#{kidandparentcategory.name}" %></li>
+              <li><%= link_to kidandparentcategory.name, "/kidandparentabooks/?utf8=✓&search=#{kidandparentcategory.name}" %></li>
 
               <% end %>
             </ul>
