@@ -12,7 +12,7 @@ namespace :db do
     
     linktoshop = children.css('url').inner_text
     
-    linktoshop.gsub!("partner", "partner=clubjapaninfo&from=bar")
+    linktoshop.gsub!("prt_xml", "partner=clubjapaninfo")
     
     authorname = children.css('author') || "none"
     

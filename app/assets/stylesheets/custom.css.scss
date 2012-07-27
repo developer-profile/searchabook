@@ -53,6 +53,17 @@ p {
   line-height: 1.7em;
 }
 
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+
 /* header */
 
 #logo {
