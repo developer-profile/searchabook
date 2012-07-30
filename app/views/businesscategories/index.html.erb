@@ -1,0 +1,27 @@
+<h1>Listing businesscategories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Parentcategoryid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @businesscategories.each do |businesscategory| %>
+  <tr>
+    <td><%= businesscategory.name %></td>
+    <td><%= businesscategory.category %></td>
+    <td><%= businesscategory.parentcategoryid %></td>
+    <td><%= link_to 'Show', businesscategory %></td>
+    <td><%= link_to 'Edit', edit_businesscategory_path(businesscategory) %></td>
+    <td><%= link_to 'Destroy', businesscategory, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Businesscategory', new_businesscategory_path %>

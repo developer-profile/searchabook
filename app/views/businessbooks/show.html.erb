@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @businessbook.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @businessbook.description %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @businessbook.link %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @businessbook.price %>
+</p>
+
+<p>
+  <b>Publisher:</b>
+  <%= @businessbook.publisher %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @businessbook.year %>
+</p>
+
+<p>
+  <b>Vendor:</b>
+  <%= @businessbook.vendor %>
+</p>
+
+<p>
+  <b>Picture:</b>
+  <%= @businessbook.picture %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @businessbook.category %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @businessbook.author %>
+</p>
+
+
+<%= link_to 'Edit', edit_businessbook_path(@businessbook) %> |
+<%= link_to 'Back', businessbooks_path %>

@@ -1,4 +1,8 @@
 Searchabook::Application.routes.draw do  
+  resources :businesscategories
+
+  resources :businessbooks
+
   resources :kidandparentcategories
 
   resources :kidandparentbooks
