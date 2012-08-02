@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @educationliteraturecategory.name %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @educationliteraturecategory.category %>
+</p>
+
+<p>
+  <b>Parentcategoryid:</b>
+  <%= @educationliteraturecategory.parentcategoryid %>
+</p>
+
+
+<%= link_to 'Edit', edit_educationliteraturecategory_path(@educationliteraturecategory) %> |
+<%= link_to 'Back', educationliteraturecategories_path %>

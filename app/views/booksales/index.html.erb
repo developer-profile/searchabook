@@ -1,0 +1,37 @@
+<h1>Listing booksales</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Link</th>
+    <th>Price</th>
+    <th>Publisher</th>
+    <th>Year</th>
+    <th>Vendor</th>
+    <th>Pict</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @booksales.each do |booksale| %>
+  <tr>
+    <td><%= booksale.title %></td>
+    <td><%= booksale.description %></td>
+    <td><%= booksale.link %></td>
+    <td><%= booksale.price %></td>
+    <td><%= booksale.publisher %></td>
+    <td><%= booksale.year %></td>
+    <td><%= booksale.vendor %></td>
+    <td><%= booksale.pict %></td>
+    <td><%= link_to 'Show', booksale %></td>
+    <td><%= link_to 'Edit', edit_booksale_path(booksale) %></td>
+    <td><%= link_to 'Destroy', booksale, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Booksale', new_booksale_path %>

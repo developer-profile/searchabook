@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @booksalecategory.name %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @booksalecategory.category %>
+</p>
+
+<p>
+  <b>Parentcategoryid:</b>
+  <%= @booksalecategory.parentcategoryid %>
+</p>
+
+
+<%= link_to 'Edit', edit_booksalecategory_path(@booksalecategory) %> |
+<%= link_to 'Back', booksalecategories_path %>

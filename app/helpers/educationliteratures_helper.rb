@@ -1,0 +1,2 @@
+module EducationliteraturesHelper
+end

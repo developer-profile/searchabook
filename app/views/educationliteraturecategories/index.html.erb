@@ -1,0 +1,27 @@
+<h1>Listing educationliteraturecategories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Parentcategoryid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @educationliteraturecategories.each do |educationliteraturecategory| %>
+  <tr>
+    <td><%= educationliteraturecategory.name %></td>
+    <td><%= educationliteraturecategory.category %></td>
+    <td><%= educationliteraturecategory.parentcategoryid %></td>
+    <td><%= link_to 'Show', educationliteraturecategory %></td>
+    <td><%= link_to 'Edit', edit_educationliteraturecategory_path(educationliteraturecategory) %></td>
+    <td><%= link_to 'Destroy', educationliteraturecategory, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Educationliteraturecategory', new_educationliteraturecategory_path %>

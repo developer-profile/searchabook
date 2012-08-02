@@ -1,0 +1,37 @@
+<h1>Listing nonfictionliteratures</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Link</th>
+    <th>Price</th>
+    <th>Publisher</th>
+    <th>Year</th>
+    <th>Vendor</th>
+    <th>Pict</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @nonfictionliteratures.each do |nonfictionliterature| %>
+  <tr>
+    <td><%= nonfictionliterature.title %></td>
+    <td><%= nonfictionliterature.description %></td>
+    <td><%= nonfictionliterature.link %></td>
+    <td><%= nonfictionliterature.price %></td>
+    <td><%= nonfictionliterature.publisher %></td>
+    <td><%= nonfictionliterature.year %></td>
+    <td><%= nonfictionliterature.vendor %></td>
+    <td><%= nonfictionliterature.pict %></td>
+    <td><%= link_to 'Show', nonfictionliterature %></td>
+    <td><%= link_to 'Edit', edit_nonfictionliterature_path(nonfictionliterature) %></td>
+    <td><%= link_to 'Destroy', nonfictionliterature, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Nonfictionliterature', new_nonfictionliterature_path %>

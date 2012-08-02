@@ -1,0 +1,27 @@
+<h1>Listing nonfictionliteraturecategories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Parentcategoryid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @nonfictionliteraturecategories.each do |nonfictionliteraturecategory| %>
+  <tr>
+    <td><%= nonfictionliteraturecategory.name %></td>
+    <td><%= nonfictionliteraturecategory.category %></td>
+    <td><%= nonfictionliteraturecategory.parentcategoryid %></td>
+    <td><%= link_to 'Show', nonfictionliteraturecategory %></td>
+    <td><%= link_to 'Edit', edit_nonfictionliteraturecategory_path(nonfictionliteraturecategory) %></td>
+    <td><%= link_to 'Destroy', nonfictionliteraturecategory, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Nonfictionliteraturecategory', new_nonfictionliteraturecategory_path %>

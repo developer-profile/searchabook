@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @nonfictionliterature.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @nonfictionliterature.description %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @nonfictionliterature.link %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @nonfictionliterature.price %>
+</p>
+
+<p>
+  <b>Publisher:</b>
+  <%= @nonfictionliterature.publisher %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @nonfictionliterature.year %>
+</p>
+
+<p>
+  <b>Vendor:</b>
+  <%= @nonfictionliterature.vendor %>
+</p>
+
+<p>
+  <b>Pict:</b>
+  <%= @nonfictionliterature.pict %>
+</p>
+
+
+<%= link_to 'Edit', edit_nonfictionliterature_path(@nonfictionliterature) %> |
+<%= link_to 'Back', nonfictionliteratures_path %>

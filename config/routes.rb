@@ -1,4 +1,16 @@
 Searchabook::Application.routes.draw do  
+  resources :booksalecategories
+
+  resources :booksales
+
+  resources :nonfictionliteraturecategories
+
+  resources :nonfictionliteratures
+
+  resources :educationliteraturecategories
+
+  resources :educationliteratures
+
   resources :businesscategories
 
   resources :businessbooks

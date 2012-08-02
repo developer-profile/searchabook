@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120727153615) do
+ActiveRecord::Schema.define(:version => 20120802221855) do
 
   create_table "books", :force => true do |t|
     t.integer  "category"
@@ -27,6 +27,50 @@ ActiveRecord::Schema.define(:version => 20120727153615) do
     t.string   "link"
   end
 
+  create_table "booksalecategories", :force => true do |t|
+    t.string   "name"
+    t.string   "category"
+    t.string   "parentcategoryid"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "booksales", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "link"
+    t.string   "price"
+    t.string   "publisher"
+    t.string   "year"
+    t.string   "vendor"
+    t.string   "pict"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "businessbooks", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "link"
+    t.string   "price"
+    t.string   "publisher"
+    t.string   "year"
+    t.string   "vendor"
+    t.string   "picture"
+    t.string   "category"
+    t.string   "author"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "businesscategories", :force => true do |t|
+    t.string   "name"
+    t.string   "category"
+    t.string   "parentcategoryid"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.integer  "categoryid"
@@ -34,6 +78,27 @@ ActiveRecord::Schema.define(:version => 20120727153615) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.string   "theme"
+  end
+
+  create_table "educationliteraturecategories", :force => true do |t|
+    t.string   "name"
+    t.string   "category"
+    t.string   "parentcategoryid"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "educationliteratures", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "link"
+    t.string   "price"
+    t.string   "publisher"
+    t.string   "year"
+    t.string   "vendor"
+    t.string   "pict"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "kidandparentbooks", :force => true do |t|
@@ -57,6 +122,27 @@ ActiveRecord::Schema.define(:version => 20120727153615) do
     t.string   "parentcategoryid"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "nonfictionliteraturecategories", :force => true do |t|
+    t.string   "name"
+    t.string   "category"
+    t.string   "parentcategoryid"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "nonfictionliteratures", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "link"
+    t.string   "price"
+    t.string   "publisher"
+    t.string   "year"
+    t.string   "vendor"
+    t.string   "pict"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|

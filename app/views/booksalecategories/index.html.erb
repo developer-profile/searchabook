@@ -1,0 +1,27 @@
+<h1>Listing booksalecategories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Parentcategoryid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @booksalecategories.each do |booksalecategory| %>
+  <tr>
+    <td><%= booksalecategory.name %></td>
+    <td><%= booksalecategory.category %></td>
+    <td><%= booksalecategory.parentcategoryid %></td>
+    <td><%= link_to 'Show', booksalecategory %></td>
+    <td><%= link_to 'Edit', edit_booksalecategory_path(booksalecategory) %></td>
+    <td><%= link_to 'Destroy', booksalecategory, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Booksalecategory', new_booksalecategory_path %>

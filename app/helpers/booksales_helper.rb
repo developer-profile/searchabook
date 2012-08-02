@@ -1,0 +1,2 @@
+module BooksalesHelper
+end

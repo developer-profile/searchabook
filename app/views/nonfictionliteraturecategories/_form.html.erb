@@ -1,0 +1,29 @@
+<%= form_for(@nonfictionliteraturecategory) do |f| %>
+  <% if @nonfictionliteraturecategory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nonfictionliteraturecategory.errors.count, "error") %> prohibited this nonfictionliteraturecategory from being saved:</h2>
+
+      <ul>
+      <% @nonfictionliteraturecategory.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :parentcategoryid %><br />
+    <%= f.text_field :parentcategoryid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
