@@ -2,7 +2,7 @@ class NonfictionliteraturesController < ApplicationController
   # GET /nonfictionliteratures
   # GET /nonfictionliteratures.json
   def index
-    @nonfictionliteratures = Nonfictionliterature.all
+    @nonfictionliteratures = Nonfictionliterature.search(params[:search]).paginate(:per_page => 18, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

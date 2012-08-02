@@ -1,0 +1,16 @@
+<div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Каталог</li>
+			<%  @educationliteraturecategories = Educationliteraturecategory.all %>
+              <% @educationliteraturecategories.each do |educationliteraturecategory| %>
+
+              <li><%= link_to educationliteratureategory.name, "/educationliteratures/?utf8=✓&search=#{educationliteraturecategory.name}" %></li>
+
+              <% end %>
+            </ul>
+          </div><!--/.well -->
+
+        </div><!--/span-->
+        
+

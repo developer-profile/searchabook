@@ -2,7 +2,7 @@ class BooksalesController < ApplicationController
   # GET /booksales
   # GET /booksales.json
   def index
-    @booksales = Booksale.all
+    @booksales = Booksale.search(params[:search]).paginate(:per_page => 18, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,11 +1,11 @@
 Searchabook::Application.routes.draw do  
+  resources :nonfictionliteraturecategories
+
   resources :educationliteraturecategories
 
   resources :educationliteratures
 
   resources :nonfictionliteratures
-
-  resources :nonfictionliteraturecategories
 
   resources :booksalecategories
 

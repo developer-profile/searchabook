@@ -1,0 +1,16 @@
+<div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Каталог</li>
+			<%  @nonfictionliteraturecategories = Nonfictionliteraturecategory.all %>
+              <% @nonfictionliteraturecategories.each do |nonfictionliteraturecat| %>
+
+              <li><%= link_to nonfictionliteraturecat.name, "/nonfictionliteratures/?utf8=✓&search=#{nonfictionliteraturecat.name}" %></li>
+
+              <% end %>
+            </ul>
+          </div><!--/.well -->
+
+        </div><!--/span-->
+        
+

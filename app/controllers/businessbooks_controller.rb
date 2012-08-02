@@ -2,7 +2,7 @@ class BusinessbooksController < ApplicationController
   # GET /businessbooks
   # GET /businessbooks.json
   def index
-    @businessbooks = Businessbook.all
+    @businessbooks = Businessbook.search(params[:search]).paginate(:per_page => 18, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

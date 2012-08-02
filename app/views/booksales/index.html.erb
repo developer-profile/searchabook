@@ -1,41 +1,18 @@
-<h1>Listing booksales</h1>
+      <%= render 'sidebar' %>
+<div class="span9">
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Link</th>
-    <th>Price</th>
-    <th>Publisher</th>
-    <th>Year</th>
-    <th>Vendor</th>
-    <th>Picture</th>
-    <th>Category</th>
-    <th>Author</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="products"><%= render 'products' %></div>
 
-<% @booksales.each do |booksale| %>
-  <tr>
-    <td><%= booksale.title %></td>
-    <td><%= booksale.description %></td>
-    <td><%= booksale.link %></td>
-    <td><%= booksale.price %></td>
-    <td><%= booksale.publisher %></td>
-    <td><%= booksale.year %></td>
-    <td><%= booksale.vendor %></td>
-    <td><%= booksale.picture %></td>
-    <td><%= booksale.category %></td>
-    <td><%= booksale.author %></td>
-    <td><%= link_to 'Show', booksale %></td>
-    <td><%= link_to 'Edit', edit_booksale_path(booksale) %></td>
-    <td><%= link_to 'Destroy', booksale, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
+<div class="digg_pagination">
+    <div clas="page_info">
+      <%= page_entries_info @booksales %>
+    </div>
+    <%= will_paginate @booksales, :container => false %>
+  </div>
 <br />
+      <% if current_user %>
+<%= link_to 'New Book', new_booksale_path %>
+      <% end %>
 
-<%= link_to 'New Booksale', new_booksale_path %>
+</div>

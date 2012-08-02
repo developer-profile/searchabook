@@ -2,7 +2,7 @@ class EducationliteraturesController < ApplicationController
   # GET /educationliteratures
   # GET /educationliteratures.json
   def index
-    @educationliteratures = Educationliterature.all
+    @educationliteratures = Educationliterature.search(params[:search]).paginate(:per_page => 18, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

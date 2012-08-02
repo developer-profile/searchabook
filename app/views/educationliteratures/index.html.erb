@@ -1,41 +1,17 @@
-<h1>Listing educationliteratures</h1>
+      <%= render 'sidebar' %>
+<div class="span9">
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Link</th>
-    <th>Price</th>
-    <th>Publisher</th>
-    <th>Year</th>
-    <th>Vendor</th>
-    <th>Picture</th>
-    <th>Category</th>
-    <th>Author</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="products"><%= render 'products' %></div>
 
-<% @educationliteratures.each do |educationliterature| %>
-  <tr>
-    <td><%= educationliterature.title %></td>
-    <td><%= educationliterature.description %></td>
-    <td><%= educationliterature.link %></td>
-    <td><%= educationliterature.price %></td>
-    <td><%= educationliterature.publisher %></td>
-    <td><%= educationliterature.year %></td>
-    <td><%= educationliterature.vendor %></td>
-    <td><%= educationliterature.picture %></td>
-    <td><%= educationliterature.category %></td>
-    <td><%= educationliterature.author %></td>
-    <td><%= link_to 'Show', educationliterature %></td>
-    <td><%= link_to 'Edit', edit_educationliterature_path(educationliterature) %></td>
-    <td><%= link_to 'Destroy', educationliterature, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
+<div class="digg_pagination">
+    <div clas="page_info">
+      <%= page_entries_info @educationliteratures %>
+    </div>
+    <%= will_paginate @educationliteratures, :container => false %>
+  </div>
 <br />
-
-<%= link_to 'New Educationliterature', new_educationliterature_path %>
+      <% if current_user %>
+<%= link_to 'New Book', new_educationliterature_path %>
+<% end %>
+</div>

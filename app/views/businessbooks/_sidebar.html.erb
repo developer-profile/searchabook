@@ -1,0 +1,16 @@
+<div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Каталог</li>
+			<%  @businesscategories = Businesscategory.all %>
+              <% @businesscategories.each do |businesscategory| %>
+
+              <li><%= link_to businesscategory.name, "/businessbooks/?utf8=✓&search=#{kidandparentcategory.name}" %></li>
+
+              <% end %>
+            </ul>
+          </div><!--/.well -->
+
+        </div><!--/span-->
+        
+

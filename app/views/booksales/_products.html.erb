@@ -1,0 +1,52 @@
+<table class="table table-striped">
+<% @booksales.each do |booksale| %>
+	<tr><td colspan="3">
+		
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7167913289158306";
+/* 728x15, создано 02.05.09 */
+google_ad_slot = "1888275628";
+google_ad_width = 728;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+		
+	</td></tr>
+
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+
+    <td>
+      <%= link_to( image_tag(booksale.picture, :class => 'list_image'), booksale.link) %>
+    </td>
+
+    <td class="list_description">
+      <dl>
+        <dt><h2><%= link_to(booksale.title, booksale.link, :class => "green") %></h2></dt>
+        <dd><%= truncate(strip_tags(booksale.description),
+               :length => 300) %></dd>
+        <dd><h3>Цена: <%= booksale.price %></h3></dd>
+      </dl>
+
+    </td>
+
+    <td class="list_actions">
+      <%= link_to("Подробнее", booksale.link, :class => "btn btn-info") %>
+
+            
+      <% if current_user %>
+      <%= link_to 'Просмотр', booksale %><br/>
+      <%= link_to 'Редактирование', edit_booksale_path(book) %><br/>
+      <%= link_to 'Удаление', booksale, 
+                  :confirm => 'Вы уверены?',
+                  :method => :delete %>
+      <% end %>
+
+
+    </td>
+  </tr>
+
+<% end %>
+</table>

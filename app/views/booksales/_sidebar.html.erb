@@ -1,0 +1,16 @@
+<div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Каталог</li>
+			<%  @booksalecategories = Booksalecategory.all %>
+              <% @booksalecategories.each do |booksalecategory| %>
+
+              <li><%= link_to booksalecategory.name, "/booksales/?utf8=✓&search=#{booksalecategory.name}" %></li>
+
+              <% end %>
+            </ul>
+          </div><!--/.well -->
+
+        </div><!--/span-->
+        
+
