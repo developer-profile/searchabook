@@ -18,7 +18,7 @@ class BooksalesControllerTest < ActionController::TestCase
 
   test "should create booksale" do
     assert_difference('Booksale.count') do
-      post :create, :booksale => { :description => @booksale.description, :link => @booksale.link, :pict => @booksale.pict, :price => @booksale.price, :publisher => @booksale.publisher, :title => @booksale.title, :vendor => @booksale.vendor, :year => @booksale.year }
+      post :create, :booksale => { :author => @booksale.author, :category => @booksale.category, :description => @booksale.description, :link => @booksale.link, :picture => @booksale.picture, :price => @booksale.price, :publisher => @booksale.publisher, :title => @booksale.title, :vendor => @booksale.vendor, :year => @booksale.year }
     end
 
     assert_redirected_to booksale_path(assigns(:booksale))
@@ -35,7 +35,7 @@ class BooksalesControllerTest < ActionController::TestCase
   end
 
   test "should update booksale" do
-    put :update, :id => @booksale, :booksale => { :description => @booksale.description, :link => @booksale.link, :pict => @booksale.pict, :price => @booksale.price, :publisher => @booksale.publisher, :title => @booksale.title, :vendor => @booksale.vendor, :year => @booksale.year }
+    put :update, :id => @booksale, :booksale => { :author => @booksale.author, :category => @booksale.category, :description => @booksale.description, :link => @booksale.link, :picture => @booksale.picture, :price => @booksale.price, :publisher => @booksale.publisher, :title => @booksale.title, :vendor => @booksale.vendor, :year => @booksale.year }
     assert_redirected_to booksale_path(assigns(:booksale))
   end
 

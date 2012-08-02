@@ -1,6 +1,6 @@
-class CreateEducationliteratures < ActiveRecord::Migration
+class CreateNonfictionliteratures < ActiveRecord::Migration
   def change
-    create_table :educationliteratures do |t|
+    create_table :nonfictionliteratures do |t|
       t.string :title
       t.text :description
       t.string :link
@@ -8,7 +8,9 @@ class CreateEducationliteratures < ActiveRecord::Migration
       t.string :publisher
       t.string :year
       t.string :vendor
-      t.string :pict
+      t.string :picture
+      t.string :category
+      t.string :author
 
       t.timestamps
     end

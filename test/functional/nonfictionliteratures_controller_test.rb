@@ -18,7 +18,7 @@ class NonfictionliteraturesControllerTest < ActionController::TestCase
 
   test "should create nonfictionliterature" do
     assert_difference('Nonfictionliterature.count') do
-      post :create, :nonfictionliterature => { :description => @nonfictionliterature.description, :link => @nonfictionliterature.link, :pict => @nonfictionliterature.pict, :price => @nonfictionliterature.price, :publisher => @nonfictionliterature.publisher, :title => @nonfictionliterature.title, :vendor => @nonfictionliterature.vendor, :year => @nonfictionliterature.year }
+      post :create, :nonfictionliterature => { :author => @nonfictionliterature.author, :category => @nonfictionliterature.category, :description => @nonfictionliterature.description, :link => @nonfictionliterature.link, :picture => @nonfictionliterature.picture, :price => @nonfictionliterature.price, :publisher => @nonfictionliterature.publisher, :title => @nonfictionliterature.title, :vendor => @nonfictionliterature.vendor, :year => @nonfictionliterature.year }
     end
 
     assert_redirected_to nonfictionliterature_path(assigns(:nonfictionliterature))
@@ -35,7 +35,7 @@ class NonfictionliteraturesControllerTest < ActionController::TestCase
   end
 
   test "should update nonfictionliterature" do
-    put :update, :id => @nonfictionliterature, :nonfictionliterature => { :description => @nonfictionliterature.description, :link => @nonfictionliterature.link, :pict => @nonfictionliterature.pict, :price => @nonfictionliterature.price, :publisher => @nonfictionliterature.publisher, :title => @nonfictionliterature.title, :vendor => @nonfictionliterature.vendor, :year => @nonfictionliterature.year }
+    put :update, :id => @nonfictionliterature, :nonfictionliterature => { :author => @nonfictionliterature.author, :category => @nonfictionliterature.category, :description => @nonfictionliterature.description, :link => @nonfictionliterature.link, :picture => @nonfictionliterature.picture, :price => @nonfictionliterature.price, :publisher => @nonfictionliterature.publisher, :title => @nonfictionliterature.title, :vendor => @nonfictionliterature.vendor, :year => @nonfictionliterature.year }
     assert_redirected_to nonfictionliterature_path(assigns(:nonfictionliterature))
   end
 

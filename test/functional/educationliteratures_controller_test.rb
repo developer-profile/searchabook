@@ -18,7 +18,7 @@ class EducationliteraturesControllerTest < ActionController::TestCase
 
   test "should create educationliterature" do
     assert_difference('Educationliterature.count') do
-      post :create, :educationliterature => { :description => @educationliterature.description, :link => @educationliterature.link, :pict => @educationliterature.pict, :price => @educationliterature.price, :publisher => @educationliterature.publisher, :title => @educationliterature.title, :vendor => @educationliterature.vendor, :year => @educationliterature.year }
+      post :create, :educationliterature => { :author => @educationliterature.author, :category => @educationliterature.category, :description => @educationliterature.description, :link => @educationliterature.link, :picture => @educationliterature.picture, :price => @educationliterature.price, :publisher => @educationliterature.publisher, :title => @educationliterature.title, :vendor => @educationliterature.vendor, :year => @educationliterature.year }
     end
 
     assert_redirected_to educationliterature_path(assigns(:educationliterature))
@@ -35,7 +35,7 @@ class EducationliteraturesControllerTest < ActionController::TestCase
   end
 
   test "should update educationliterature" do
-    put :update, :id => @educationliterature, :educationliterature => { :description => @educationliterature.description, :link => @educationliterature.link, :pict => @educationliterature.pict, :price => @educationliterature.price, :publisher => @educationliterature.publisher, :title => @educationliterature.title, :vendor => @educationliterature.vendor, :year => @educationliterature.year }
+    put :update, :id => @educationliterature, :educationliterature => { :author => @educationliterature.author, :category => @educationliterature.category, :description => @educationliterature.description, :link => @educationliterature.link, :picture => @educationliterature.picture, :price => @educationliterature.price, :publisher => @educationliterature.publisher, :title => @educationliterature.title, :vendor => @educationliterature.vendor, :year => @educationliterature.year }
     assert_redirected_to educationliterature_path(assigns(:educationliterature))
   end
 

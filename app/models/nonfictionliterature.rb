@@ -1,3 +1,3 @@
 class Nonfictionliterature < ActiveRecord::Base
-  attr_accessible :description, :link, :pict, :price, :publisher, :title, :vendor, :year
+  attr_accessible :author, :category, :description, :link, :picture, :price, :publisher, :title, :vendor, :year
 end

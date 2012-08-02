@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120802221855) do
+ActiveRecord::Schema.define(:version => 20120802225219) do
 
   create_table "books", :force => true do |t|
     t.integer  "category"
@@ -43,7 +43,9 @@ ActiveRecord::Schema.define(:version => 20120802221855) do
     t.string   "publisher"
     t.string   "year"
     t.string   "vendor"
-    t.string   "pict"
+    t.string   "picture"
+    t.string   "category"
+    t.string   "author"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -96,7 +98,9 @@ ActiveRecord::Schema.define(:version => 20120802221855) do
     t.string   "publisher"
     t.string   "year"
     t.string   "vendor"
-    t.string   "pict"
+    t.string   "picture"
+    t.string   "category"
+    t.string   "author"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -140,7 +144,9 @@ ActiveRecord::Schema.define(:version => 20120802221855) do
     t.string   "publisher"
     t.string   "year"
     t.string   "vendor"
-    t.string   "pict"
+    t.string   "picture"
+    t.string   "category"
+    t.string   "author"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

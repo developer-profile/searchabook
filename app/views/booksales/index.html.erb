@@ -9,7 +9,9 @@
     <th>Publisher</th>
     <th>Year</th>
     <th>Vendor</th>
-    <th>Pict</th>
+    <th>Picture</th>
+    <th>Category</th>
+    <th>Author</th>
     <th></th>
     <th></th>
     <th></th>
@@ -24,7 +26,9 @@
     <td><%= booksale.publisher %></td>
     <td><%= booksale.year %></td>
     <td><%= booksale.vendor %></td>
-    <td><%= booksale.pict %></td>
+    <td><%= booksale.picture %></td>
+    <td><%= booksale.category %></td>
+    <td><%= booksale.author %></td>
     <td><%= link_to 'Show', booksale %></td>
     <td><%= link_to 'Edit', edit_booksale_path(booksale) %></td>
     <td><%= link_to 'Destroy', booksale, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
