@@ -2,10 +2,10 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Каталог</li>
-			<%  @kidandparentategories = Kidandparentcategory.all %>
-              <% @kidandparentategories.each do |kidandparentcategory| %>
+			<%  @businesscategories = Businesscategory.all %>
+              <% @businesscategories.each do |businesscategory| %>
 
-              <li><%= link_to kidandparentcategory.name, "/kidandparentbooks/?utf8=✓&search=#{kidandparentcategory.name}" %></li>
+              <li><%= link_to businessategory.name, "/businessbooks/?utf8=✓&search=#{kidandparentcategory.name}" %></li>
 
               <% end %>
             </ul>
