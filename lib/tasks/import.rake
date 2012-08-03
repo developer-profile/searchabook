@@ -46,6 +46,7 @@ namespace :db do
   require 'nokogiri'
   
   @doc = Nokogiri::XML(File.open(ENV['xml_file']))
+  
 
   
   @doc.css('category').each do |node|

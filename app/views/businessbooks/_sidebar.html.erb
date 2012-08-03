@@ -5,7 +5,7 @@
 			<%  @businesscategories = Businesscategory.all %>
               <% @businesscategories.each do |businesscategory| %>
 
-              <li><%= link_to businesscategory.name, "/businessbooks/?utf8=✓&search=#{kidandparentcategory.name}" %></li>
+              <li><%= link_to businesscategory.name, "/businessbooks/?utf8=✓&search=#{businesscategory.name}" %></li>
 
               <% end %>
             </ul>
