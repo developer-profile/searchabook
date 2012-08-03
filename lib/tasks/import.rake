@@ -5,9 +5,7 @@ namespace :db do
   require 'open-uri'
   require 'nokogiri'
   
-  ebooks = "http://static.ozone.ru/multimedia/yml/facet/ebooks.xml"
-
-  @doc = Nokogiri::XML(open(ebooks))
+  @doc = Nokogiri::XML(File.open(ENV['xml_file']))
   
   @doc.css('offer').each do |node|
     
@@ -47,9 +45,7 @@ namespace :db do
   require 'open-uri'
   require 'nokogiri'
   
-  ebooks = "http://static.ozone.ru/multimedia/yml/facet/ebooks.xml"
-
-  @doc = Nokogiri::XML(open(ebooks))
+  @doc = Nokogiri::XML(File.open(ENV['xml_file']))
 
   
   @doc.css('category').each do |node|
