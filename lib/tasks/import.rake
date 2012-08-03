@@ -532,7 +532,7 @@ namespace :db do
     
     publishername = children.css('publisher') || "none"
     
-    puts children.css('name').inner_text  
+#    puts children.css('name').inner_text  
     Nonfictionliterature.create(
                 :title => children.css('name').inner_text,
                 :price => children.css('price').inner_text,
@@ -572,7 +572,7 @@ namespace :db do
                :parentcategoryid => node['parentid']
                
                )
-    puts node.text
+#    puts node.text
      end
   puts "nonfictionliterature categories loaded"
   end
