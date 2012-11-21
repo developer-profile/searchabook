@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   
-  before_filter :authorize, :only => [:edit, :update, :destroy]
+  before_filter :authorize, :only => [:new, :edit, :update, :destroy]
   
   # GET /books
   # GET /books.json

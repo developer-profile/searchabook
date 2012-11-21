@@ -1,6 +1,6 @@
 class KidandparentbooksController < ApplicationController
   
-  before_filter :authorize, :only => [:edit, :update, :destroy]
+  before_filter :authorize, :only => [:new, :edit, :update, :destroy]
   
   # GET /kidandparentbooks
   # GET /kidandparentbooks.json
