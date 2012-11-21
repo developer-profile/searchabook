@@ -1,4 +1,8 @@
 class NonfictionliteraturesController < ApplicationController
+
+before_filter :authorize, :only => [:new, :edit, :update, :destroy]
+
+  
   # GET /nonfictionliteratures
   # GET /nonfictionliteratures.json
   def index

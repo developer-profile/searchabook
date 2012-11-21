@@ -1,4 +1,7 @@
 class BusinessbooksController < ApplicationController
+
+before_filter :authorize, :only => [:new, :edit, :update, :destroy]
+  
   # GET /businessbooks
   # GET /businessbooks.json
   def index

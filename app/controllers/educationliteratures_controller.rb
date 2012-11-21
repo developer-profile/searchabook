@@ -1,4 +1,7 @@
 class EducationliteraturesController < ApplicationController
+
+before_filter :authorize, :only => [:new, :edit, :update, :destroy]
+  
   # GET /educationliteratures
   # GET /educationliteratures.json
   def index
